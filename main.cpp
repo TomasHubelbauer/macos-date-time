@@ -15,23 +15,23 @@ int main(int argc, char *argv[])
       {
       case 0:
         formatter = kCFDateFormatterNoStyle;
-        formatterDebug = (char *)"kCFDateFormatterNoStyle";
-        break;
+        formatterDebug = (char *)"no";
+        continue;
       case 1:
         formatter = kCFDateFormatterShortStyle;
-        formatterDebug = (char *)"kCFDateFormatterShortStyle";
+        formatterDebug = (char *)"short";
         break;
       case 2:
         formatter = kCFDateFormatterMediumStyle;
-        formatterDebug = (char *)"kCFDateFormatterMediumStyle";
+        formatterDebug = (char *)"medium";
         break;
       case 3:
         formatter = kCFDateFormatterLongStyle;
-        formatterDebug = (char *)"kCFDateFormatterLongStyle";
+        formatterDebug = (char *)"long";
         break;
       case 4:
         formatter = kCFDateFormatterFullStyle;
-        formatterDebug = (char *)"kCFDateFormatterFullStyle";
+        formatterDebug = (char *)"full";
         break;
       }
 
