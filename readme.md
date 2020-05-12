@@ -1,6 +1,29 @@
 # macOS Date & Time
 
-In macOS, TODO
+In macOS, the date and time formatting strings have a UI which allows editing them
+by bringing tokens in and out of the format string edit fields. The field is also
+editable so constant strings can be intertwined with the tokens which will become
+substitued with the actual variable value.
+
+This seems to interact weirdly with the System Preferences > Languages & Region >
+General > 24-Hour Time setting. Specifically, in case this setting is ON (so the
+AM/PM token should not be included in the time format string) while the AM/PM box
+is included in the time format string at the same time, it will remain a part of
+it, when it should be removed instead.
+
+Also, in the case of this toggle being OFF (so the token should be included in the
+time format string) while at the same time the time format field already including
+the AM/PM token, if the token is enclosed in constant string characters, another
+one will be appeneded to the final format string. If it is enclosed by other tokens
+or white-space, it will be moved to have a space in front of it instead.
+
+This is all very weird, but the main concern is that in case the AM/PM token is
+included in the time format string and the 24-Hour Time toggle being ON, the format
+string will still include the ` a` token instead of not doing so!
+
+This token is included by default, and when using the default, it will be removed
+or added depending on the value of the toggle, but if changed, the toggle will lose
+its ability to correctly manipulate these format strings wrecking everything holy.
 
 ## Running
 
